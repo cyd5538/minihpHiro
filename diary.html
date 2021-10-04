@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2021 MINI HOMEPAGE</title>
+    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./diary.css">
+    <script src="https://kit.fontawesome.com/fb14cb39cf.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="bookcover">
+      <div class="bookdot">
+        <div class="page">
+            <div class="box">
+              <div>TODAY <span id="red">25000</span> | TOTAL 2243858</div>
+              <div class="content">
+                <div><img src="oh.jpg" alt="오징어게임"></div>
+                <div>원래 사람은 믿을만해서 믿는게 아니야. 안 그러면 기댈대가 없으니까 믿는거지.</div>
+                <div> 오징어 게임</div>
+                <div class="pado">
+                  <div class="padodrop">
+                    <div class="padotitle">파도타기</div>
+                    <div class="triangle"></div>
+                  </div>
+                  <div class="padomenu">
+                    <a href="https://www.netflix.com/kr/" target="_blank">넷플릭스로 가기</a>
+                    <a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%98%A4%EC%A7%95%EC%96%B4+%EA%B2%8C%EC%9E%84" target="_blank"
+                      >오징어 게임</a
+                    >
+                  </div>
+                </div> 
+              </div>
+            </div>
+            <div class="box2">
+              <div><span class="minihome">오징어 게임 미니홈피</span> <span class="right">http:url://오징어게임봐</span> </div>
+
+              <div class="content2">
+                  <div class="diary">
+                      <div class="today">02.30<br />TUE</div>
+                      <div class="date-list">
+                        <div class="date">1</div>
+                        <div class="date">2</div>
+                        <div class="date">3</div>
+                        <div class="date"><span class="color-blue">4</span></div>
+                        <div class="date"><span class="color-red">5</span></div>
+                        <div class="date">6</div>
+                        <div class="date">7</div>
+                        <div class="date">8</div>
+                        <div class="date">9</div>
+                        <div class="date">10</div>
+                        <div class="date"><span class="color-blue">11</span></div>
+                        <div class="date"><span class="color-red">12</span></div>
+                        <div class="date">13</div>
+                        <div class="date">14</div>
+                        <div class="date">15</div>
+                        <div class="date">16</div>
+                        <div class="date">17</div>
+                        <div class="date"><span class="color-blue">18</span></div>
+                        <div class="date"><span class="color-red">19</span></div>
+                        <div class="date">20</div>
+                        <div class="date">21</div>
+                        <div class="date">22</div>
+                        <div class="date">23</div>
+                        <div class="date">24</div>
+                        <div class="date"><span class="color-blue">25</span></div>
+                        <div class="date"><span class="color-red">26</span></div>
+                        <div class="date">27</div>
+                        <div class="date">28</div>
+                        <div class="date">29</div>
+                        <div class="date">30</div>
+                      </div>
+                </div>
+                <div class="diarycontent">
+                <div class="diary2">
+                    <div class="year">2021-09-27</div>
+                    <div class="yearcontent">자네 덕에 오래전 일들이 떠올랐어<br>그렇게 재미있었던 건 <br> 정말 오랜만이었어.
+                      <i class="fas fa-gamepad"></i></div>
+                    <div></div>
+                </div>
+                <div class="diary2">
+                    <div class="year">2021-09-26</div>
+                    <div class="yearcontent">돈이 하나도 없는 사람과 <br> 돈이 너무 많은 사람의 공통점이 무엇인줄 아니?<br>사는게 재미가 없다는거야
+                    <br>언제부터선가 내 고객들이 하나,둘씩 나한테 그러는거야. <br>살면서 더이상 즐거운게 없다고
+                    <br>그래서 다들 모여서 고민을 좀 해봤지. <br> 뭘하면은 좀 재미가 있을까?<i class="fas fa-gamepad"></i></div>
+                </div>
+              
+                 <div class="secret-box">
+                    <button class="secret" onclick="getTextFile()">
+                      <i class="fas fa-key"></i> 오징어 비밀 일기
+                  </div>
+                  <div class="diary3" id="secret-box">
+                    <div class="diary-date">오징어 비밀 일기</div>
+                    <div class="diary-text font-kyobohand" id="secret-diary"></div>
+                  </div>
+              </div>
+            </div>
+            </div>
+    
+            <div class="box3">
+              <div><a href="./home.html">홈</a></div>
+              <div><a href="./diary.html">다이어리</a></div>
+              <div><a href="./photo.html">사진첩</a></div>
+              <div><a href="./visitor.html">방명록</a></div>
+            </div>
+
+          </div>
+         
+        </div> 
+      </div>
+    </div>
+    <script>
+          function getTextFile() {
+    var input = document.createElement("input");
+    input.type = "file";
+    input.accept = "text/plain";
+    input.onchange = function (event) {
+      processFile(event.target.files[0]);
+    };
+    input.click();
+  }
+
+  function processFile(file) {
+    var reader = new FileReader();
+    reader.readAsText(file, "utf-8");
+
+    reader.onload = function () {
+      document.getElementById("secret-diary").innerText = reader.result;
+      document.getElementById("secret-box").style.display = "block";
+    };
+  }
+    </script>
+  </body>
+</html>

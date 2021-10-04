@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="button-box">
+        <button class="diary-button" onclick="getTextFile()">
+          <i class="fas fa-lock"></i> Kuromi's secret diary
+        </button>
+      </div>
+      <div class="diary-content" id="secret-box">
+        <div class="diary-content-date">==TMI==</div>
+        <div class="diary-content-write" id="secret-diary"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="menu-container">
+  <ul>
+    <li>
+      <div><a href="./homepage.html">Home</a></div>
+    </li>
+    <li>
+      <div><a href="./diary.html">Diary</a></div>
+    </li>
+    <li>
+      <div><a href="./photo.html">Photo</a></div>
+    </li>
+    <li>
+      <div><a href="#">GuestB</a></div>
+    </li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+<script src="https://kit.fontawesome.com/d67af9fb3f.js" crossorigin="anonymous"></script>
+<script>
+function getTextFile() {
+var input = document.createElement("input");
+input.type = "file";
+input.accept = "text/plain";
+input.onchange = function (event) {
+processFile(event.target.files[0]);
+};
+input.click();
+}
+
+function processFile(file) {
+var reader = new FileReader();
+reader.readAsText(file, "utf-8");
+
+reader.onload = function () {
+document.getElementById("secret-diary").innerText = reader.result;
+document.getElementById("secret-box").style.display = "block";
+};
+}
+</script>
+</body>
+</html>
